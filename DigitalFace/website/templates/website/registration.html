@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{%static css/styles.css%}" rel="stylesheet">
+    <title>Registration</title>
+</head>
+<body>
+    <div style="margin-top:40px;text-align:center">
+        <h2>Registration Form</h2>
+    </div>
+    <hr>
+    <br>
+    <div style="text-align:center">
+        <form action="" method="post">
+    {%csrf_token%}
+
+    Name <input name="Name" type="text" placeholder="Name">
+            {%if form.Name.errors%}
+                <span style="color:red">Error in Name</span>
+            {%endif%}<br><br>
+
+    DOB <input name="DOB" type="date" placeholder="DOB" value={{form.DOB|date:"Y-m-d"}}>
+            {%if form.DOB.errors%}
+                <span style="color:red">Error in DOB</span>
+            {%endif%}<br><br>
+    Street <input name="Street" type="text" placeholder="Street">
+            {%if form.Street.errors%}
+                <span style="color:red">Error in Street</span>
+            {%endif%}<br><br>
+    Locality <input name="Locality" type="text" placeholder="Locality">
+            {%if form.Locality.errors%}
+                <span style="color:red">Error in Locality</span>
+            {%endif%}<br><br>
+    City <input name="City" type="text" placeholder="City">
+            {%if form.City.errors%}
+                <span style="color:red">Error in City</span>
+            {%endif%}<br><br>
+    District <input name="District" type="text" placeholder="District">
+            {%if form.District.errors%}
+                <span style="color:red">Error in District</span>
+            {%endif%}<br><br>
+    State <input name="State" type="text" placeholder="State">
+            {%if form.State.errors%}
+                <span style="color:red">Error in State</span>
+            {%endif%}<br><br>
+    Pincode <input name="Pincode" type="text" placeholder="Pincode">
+            {%if form.Pincode.errors%}
+                <span style="color:red">Error in Pincode</span>
+            {%endif%}<br><br>
+    UID <input name="UID" type="text" placeholder="UID">
+            {%if form.UID.errors%}
+                <span style="color:red">Error in UID</span>
+            {%endif%}<br><br>
+    <input type="submit" value="Submit">
+
+</form>
+    </div>
+</body>
+</html>
