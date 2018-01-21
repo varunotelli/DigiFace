@@ -1,60 +1,108 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="{%static css/styles.css%}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="{%static 'css/styles.css'%}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Berkshire+Swash|Macondo|Risque" rel="stylesheet">
     <title>Registration</title>
+
+    <style type="text/css"></style>
 </head>
 <body>
-    <div style="margin-top:40px;text-align:center">
-        <h2>Registration Form</h2>
+    <div id="heading">
+        <p>Registration Form</p>
     </div>
-    <hr>
     <br>
-    <div style="text-align:center">
-        <form action="" method="post">
-    {%csrf_token%}
+    <div id="form_div">
 
-    Name <input name="Name" type="text" placeholder="Name">
-            {%if form.Name.errors%}
-                <span style="color:red">Error in Name</span>
-            {%endif%}<br><br>
+        <form action="" method="post" class="form-horizontal">
+        {%csrf_token%}
 
-    DOB <input name="DOB" type="date" placeholder="DOB" value={{form.DOB|date:"Y-m-d"}}>
-            {%if form.DOB.errors%}
-                <span style="color:red">Error in DOB</span>
-            {%endif%}<br><br>
-    Street <input name="Street" type="text" placeholder="Street">
-            {%if form.Street.errors%}
-                <span style="color:red">Error in Street</span>
-            {%endif%}<br><br>
-    Locality <input name="Locality" type="text" placeholder="Locality">
-            {%if form.Locality.errors%}
-                <span style="color:red">Error in Locality</span>
-            {%endif%}<br><br>
-    City <input name="City" type="text" placeholder="City">
-            {%if form.City.errors%}
-                <span style="color:red">Error in City</span>
-            {%endif%}<br><br>
-    District <input name="District" type="text" placeholder="District">
-            {%if form.District.errors%}
-                <span style="color:red">Error in District</span>
-            {%endif%}<br><br>
-    State <input name="State" type="text" placeholder="State">
-            {%if form.State.errors%}
-                <span style="color:red">Error in State</span>
-            {%endif%}<br><br>
-    Pincode <input name="Pincode" type="text" placeholder="Pincode">
-            {%if form.Pincode.errors%}
-                <span style="color:red">Error in Pincode</span>
-            {%endif%}<br><br>
-    UID <input name="UID" type="text" placeholder="UID">
-            {%if form.UID.errors%}
-                <span style="color:red">Error in UID</span>
-            {%endif%}<br><br>
-    <input type="submit" value="Submit">
+        <div class="form-group col-xs-4">
+            <label class="control-label">Name</label>
+            <input name="Name" type="text" placeholder="Name" class="form-control">
+                {%if form.Name.errors%}
+                    <span>Error in Name</span>
+                {%endif%}
+        </div>
 
-</form>
+        <div class="form-group col-xs-4">
+            <label class="control-label">DOB</label>
+            <input name="DOB" type="date" placeholder="DOB" class="form-control" value={{form.DOB|date:"Y-m-d"}}>
+                    {%if form.DOB.errors%}
+                        <span>Error in DOB</span>
+                    {%endif%}
+        </div>
+
+        <div class="form-group col-xs-4">
+            <label class="control-label">UID</label>
+            <input name="UID" type="text" placeholder="UID" class="form-control">
+                {%if form.UID.errors%}
+                    <span>Error in UID</span>
+                {%endif%}
+        </div>
+
+        <div class="form-group col-xs-4">
+            <label class="form-label">Street</label>
+            <input name="Street" type="text" placeholder="Street" class="form-control">
+                {%if form.Street.errors%}
+                    <span>Error in Street</span>
+                {%endif%}
+        </div>
+
+        <div class="form-group col-xs-4">
+            <label class="form-label">Locality</label>
+            <input name="Locality" type="text" placeholder="Locality" class="form-control">
+                {%if form.Locality.errors%}
+                    <span>Error in Locality</span>
+                {%endif%}
+        </div>
+
+        <div class="form-group col-xs-4">
+            <label class="form-label">City</label>
+            <input name="City" type="text" placeholder="City" class="form-control">
+                {%if form.City.errors%}
+                    <span>Error in City</span>
+                {%endif%}
+        </div>
+
+        <div class="form-group col-xs-4">
+            <label class="form-label">District</label>
+            <input name="District" type="text" placeholder="District" class="form-control">
+                {%if form.District.errors%}
+                    <span>Error in District</span>
+                {%endif%}
+        </div>
+
+        <div class="form-group col-xs-4">
+            <label class="form-label">State</label>
+            <input name="State" type="text" placeholder="State" class="form-control">
+                {%if form.State.errors%}
+                    <span>Error in State</span>
+                {%endif%}
+        </div>
+
+        <div class="form-group col-xs-4">
+            <label class="form-label">Pincode</label>
+            <input name="Pincode" type="tlabel" placeholder="Pincode" class="form-control">
+                {%if form.Pincode.errors%}
+                    <span>Error in Pincode</span>
+                {%endif%}
+        </div>    
+    
+        <div class="form-group col-sm-12">
+            <input type="submit" value="Submit" id="btn" class="btn btn-success">
+        </div>
+        </form>
     </div>
 </body>
 </html>

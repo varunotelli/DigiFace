@@ -4,7 +4,7 @@ from django.views.generic import View
 from django.views.generic.edit import CreateView
 from django.views.generic import FormView
 from .forms import Userform
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from .models import temp,Person
 
 class PersonCreate(CreateView):
